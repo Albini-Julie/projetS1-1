@@ -1,0 +1,43 @@
+.hero__titre {
+    text-align: center;
+    color: white; 
+    font-family: var(--font-sherif);
+    font-size: var(--titre_page);
+
+}
+
+.hero__vignette {
+    width: 30%;
+    margin-left: 8rem;
+    margin-bottom: 3rem;
+}
+
+.hero__texte {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-right: 2.5rem;
+    margin-left: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero__img {
+    width: 100%;
+}
+
+.hero__legende {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--légende_et_-nom-footer);
+    color: white;
+    text-align: center;
+}
+
+.hero__img ::before {
+    content: '';
+    Width: 200px;
+    Left: 100px;
+    Right: 100px;
+    Height: 200px;
+    Top: 100px;
+    Bottom: 100px
+}

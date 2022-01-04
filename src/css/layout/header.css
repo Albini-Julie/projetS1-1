@@ -1,0 +1,51 @@
+.header__titre {
+    font-family: var(--font-sans-sherif);
+    margin: 0;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    color: white;
+    
+}
+
+.header__titre--N {
+    position:absolute;
+    color: var(--jaune-moutarde);
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_header_et_partie);
+    margin-left: 9rem;
+    margin-top: -2.5rem;
+}
+
+.header__titre--e {
+    position:absolute;
+    color: var(--jaune-pastel);
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_header_et_partie);
+    margin-left: 11rem;
+    margin-top: -2.5rem;
+}
+
+.header__titre--w {
+    position:absolute;
+    color: var(--jaune-pastel-clair);
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_header_et_partie);
+    margin-left: 12.5rem;
+    margin-top: -2.5rem;
+}
+
+.header__menu {
+    display: flex;
+    float: left;
+    filter: none;
+    border: none;
+    background: var(--bleu-pastel);
+    margin: 1rem;
+    
+}
+
+.header__img {
+    width: 10%;
+    margin-top: -2rem;
+    margin-left: 16rem;
+}

@@ -1,0 +1,83 @@
+.contenu__titre {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_header_et_partie);
+    color: white;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--jaune-éléments);
+    margin-right: 5rem;
+    margin-top: 3rem;
+    background-color: var(--jaune-éléments);
+}
+
+.contenu__titre--soustitre {
+    font-size: var(--annonce_article);
+    margin-left: 4rem;
+    text-align: center;
+}
+
+.contenu__texte {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.contenu__barres {
+    z-index: 1;
+    margin-top: 18rem;
+}
+
+.contenu__img {
+    z-index: 2;
+    width: 110%;
+    margin-top: -18rem;
+    margin-left: -1rem;
+}
+
+.contenu__legende {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--légende_et_-nom-footer);
+    color: white;
+    text-align: center;
+}
+
+.contenu__vignette {
+    position: absolute;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--vignette);
+    color: white;
+    border-width: 0.3rem;
+    border-radius: 50%;
+    height: 8rem; 
+	width: 8rem;
+    border-style: solid ;
+    border-color: red;
+    background-color: red;
+    margin-right:5rem;
+    margin-left: 14rem;
+    margin-top: -37rem;
+}
+
+.contenu__vignette--avion {
+    margin-top: -22rem;
+}
+
+.contenu__citation {
+    font-family: var(--font-sherif);
+    font-size: var(--citation);
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    
+}
+
+.contenu__icon {
+    margin-left: 2rem;
+}
+
+.contenu__texte--fleche {
+    margin-left: 6rem;
+    margin-top: -2.5rem;
+}

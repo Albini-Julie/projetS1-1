@@ -1,0 +1,46 @@
+.footer__legal {
+    text-align: center;
+    font-family: var(--font-sherif);
+    font-size: var(--légal_footer);
+    color: var(--bleu-marine-fond);
+    font-weight: 1000;
+    margin: 0;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    background-color: var(--bleu-pastel);
+    text-decoration: underline;
+}
+
+.footer__nom {
+    text-align: center;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--légende_et_-nom-footer);
+    margin: 0;
+    padding: 1rem;
+    padding-bottom: 4rem;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    background-color: var(--bleu-pastel);
+}
+
+.footer__mail {
+    position: absolute;
+    color: var(--bleu-marine-fond);
+    text-decoration: none;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    margin-top: -3rem;
+    margin-left: 6rem;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--jaune-pastel-clair);
+    border-radius: 2rem;
+    background-color: var(--jaune-pastel-clair);
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}

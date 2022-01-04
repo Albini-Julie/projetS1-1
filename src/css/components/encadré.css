@@ -1,0 +1,29 @@
+.encadré__titre {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_encadré);
+    color: var(--bleu-marine-fond);
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    background-color: var(--bleu-pastel);
+    padding: 0.5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-right: 10rem;
+    margin-left: 1rem;
+}
+
+.encadré__texte {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-top: -6.5rem;
+    border-width: 0.2rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    padding: 0.5rem;
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+}

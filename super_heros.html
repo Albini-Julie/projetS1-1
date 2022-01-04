@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{ menuIsOpen : false}" :class="menuIsOpen && 'noscroll'">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,48 +13,46 @@
     </head>
     <body>
         <header class="header">
-            <button class="header__menu"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
-            <h1 class="header__titre">Fly New</h1>
+            <div id="rectangle"></div>
+            <button class="header__menu" @click="menuIsOpen = !menuIsOpen" :class="menuIsOpen"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
+            <h1 class="header__titre">Fly <h1 class="header__titre header__titre--N">N</h1> <h1 class="header__titre header__titre--e">e</h1> <h1 class="header__titre header__titre--w">w</h1></h1>
             <img class="header__img" src="public/img/logo.jpg" alt="logo du site">
 
-            <div class="menu">
+            <div class="menu" :class="menuIsOpen && 'menu--open'">
                 <img class="menu__barresDeco" src="public/icons/barres.svg" alt="barres décoratives">
-                <img class="menu__croix" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
-                
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
-                    <h5 class="menu__texte">Super-héros</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
-                    <h5 class="menu__texte">Problème écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
-                    <h5 class="menu__texte">Solution écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
-                    <h5 class="menu__texte">Contact</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
-                    <h5 class="menu__texte">Autres projets</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
-                    <h5 class="menu__texte">Livres</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
-                    <h5 class="menu__texte">Galerie</h5>
-                </div>
+                <img class="menu__croix" @click="menuIsOpen = false" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
+                <nav>
+                    <ul class="menu__list list-unstyled">
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
+                            <li class="menu__item"><a class="menu__link" href="article1.html">Super-héros</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                            <li class="menu__item"><a class="menu__link" href="article2.html">Problème écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
+                            <li class="menu__item"><a class="menu__link" href="article3.html">Solution écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
+                            <li class="menu__item"><a class="menu__link" href="galerie.html">Contact</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                            <li class="menu__item"><a class="menu__link" href="glossaire.html">Autres projets</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
+                            <li class="menu__item"><a class="menu__link" href="A_propos.html">Livres</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
+                            <li class="menu__item"><a class="menu__link" href="A_propos.html">Galerie</a></li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
         </header>
 
@@ -101,10 +99,10 @@
                     du monde entier à l’aide de son armure.</p>
                 <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <figure class="contenu__illustration">
-                    <img class="contenu__img" src="mark.jpg" alt="image armures">
+                    <img class="contenu__img" src="public/img/mark.jpg" alt="image armures">
                     <figcaption class="contenu__legende">©Accurate.MCU</figcaption>
                 </figure>
-                <p class="contenu__vignette">Comparaisonentre l’armuredu film (2008)et le comic de 63</p>
+                <p class="contenu__vignette">Comparaisonentre l’armure du film (2008)et le comic de 63</p>
             </article>
 
             <article class="contenu">
@@ -131,7 +129,7 @@
                 <q class="contenu__citation">« Je ne suis pas un héros. Je suis Iron Man »</q>
                 <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <figure class="contenu__illustration">
-                    <img class="contenu__img" src="Image_accueil.jpg" alt="image extrait du film">
+                    <img class="contenu__img" src="public/img/Image_accueil.jpg" alt="image extrait du film">
                     <figcaption class="contenu__legende">©Reddit - EddytheMartian</figcaption>
                 </figure>
                 <p class="contenu__vignette">Extraits des films Iron Man 2 et Avengers Endgame sur les découvertes de Tony Stark</p>
@@ -162,35 +160,35 @@
                 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Quinjet (avion des Avengers )</p>
+                    <p class="contenu__texte contenu__texte--fleche">Quinjet (avion des Avengers )</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Héliporteur (SHIELD)</p>
+                    <p class="contenu__texte contenu__texte--fleche">Héliporteur (SHIELD)</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Boeings (jets personnels)</p>
+                    <p class="contenu__texte contenu__texte--fleche">Boeings (jets personnels)</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Stark Cargo Plane (transport de matériel) </p>
+                    <p class="contenu__texte contenu__texte--fleche">Stark Cargo Plane (transport de matériel) </p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Divers avions pour l’armé</p>
+                    <p class="contenu__texte contenu__texte--fleche">Divers avions pour l’armé</p>
                 </div>
 
                 <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <figure class="contenu__illustration">
-                    <img class="contenu__img" src="quinjet.jpg" alt="image avion du film">
+                    <img class="contenu__img" src="public/img/quinjet.jpg" alt="image avion du film">
                     <figcaption class="contenu__legende">©Artstation.com - Phil Saunders</figcaption>
                 </figure>
-                <p class="contenu__vignette">Quinjet,un avion utilisé par les Avengers mais créé par Tony Stark</p>
+                <p class="contenu__vignette contenu__vignette--avion">Quinjet,un avion utilisé par les Avengers mais créé par Tony Stark</p>
             </article>
 
             <article class="contenu">
@@ -214,7 +212,7 @@
                     artificielle de sa propre création !</p>
                 <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <figure class="contenu__illustration">
-                    <img class="contenu__img" src="Tales_Of_Suspense.jpg" alt="affiche">
+                    <img class="contenu__img" src="public/img/Tales_Of_Suspense.jpg" alt="affiche">
                     <figcaption class="contenu__legende">©Senscritique</figcaption>
                 </figure>
                 <p class="contenu__vignette">1er comic dédié uniquement à Iron Man, Tales of suspense n°39 par Stan Lee</p>
@@ -241,7 +239,7 @@
         
         <footer class="footer">
             <p class="footer__legal">Projet réalisé dans le cadre d’un exercice pédagogique au département MMi de Montbéliard</p>
-            <p class="footer_nom">Cécile Gaultier A2</p>
+            <p class="footer__nom">Cécile Gaultier A2</p>
             <a class="footer__mail" href="mailto:gaulph@gmail.com">gaulph@gmail.com</a>
         </footer>
     </body>

@@ -1,0 +1,38 @@
+:root {
+
+/* Color styles */
+--bleu-marine-fond: #2B5172;
+--bleu-pastel: #96D6FF;
+--jaune-éléments: #FFD34E;
+--rouge-vignette: #F64C3C;
+--jaune-pastel-clair: #FFE595;
+--jaune-pastel: #FFDC71;
+--jaune-moutarde: #FCBD00;
+
+/* Text-size styles */
+/* base size: base (16px) */
+--onglet_menu: 1.25rem;
+--titre_intermédiaire: 1.12rem;
+--texte: 0.94rem;
+--titre_lien_article: 1.25rem;
+--vignette: 0.75rem;
+--légende_et_-nom-footer: 0.75rem;
+--titre_page: 2.5rem;
+--titre_encadré: 1.56rem;
+--titre_header_et_partie: 2.5rem;
+--citation: 1.88rem;
+--légal_footer: 0.75rem;
+--annonce_article: 1.25rem;
+--texte_souligné: 0.94rem;
+--texte_bold: 0.94rem;
+--texte_bold_souligné: 0.94rem;
+--nom_film: 1.12rem;
+--formulaire: 1.12rem;
+--base: 1rem;
+
+/*fonts*/
+
+--font-sherif: 'Arvo', serif;
+--font-sans-sherif:'Montserrat Alternates', sans-serif;
+
+}

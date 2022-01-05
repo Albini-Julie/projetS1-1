@@ -1,0 +1,22 @@
+.intro__img {
+    width: 100%;
+}
+
+.intro__fleches {
+    margin-top: -5rem;
+    margin-left: -3.5rem;
+    margin-right: 9.5rem;;
+    margin-bottom: -5rem;
+    width: 12rem;
+}
+
+.intro__fleches--droite {
+    transform: rotate(180deg);
+    margin-right: -3.5rem;
+}
+
+.intro__logo {
+    width: 30%;
+    margin-top: -5rem;
+    margin-left: 8rem;
+}

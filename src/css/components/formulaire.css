@@ -1,0 +1,39 @@
+.formulaire__champ {
+    width: 80%;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--bleu-pastel);
+    background-color: var(--bleu-pastel);
+    margin-top: 1rem;
+    margin-left: 2rem;
+}
+
+.formulaire__legende {
+    position:absolute;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--formulaire);
+    font-weight: 500;
+    color: var(--bleu-marine-fond);
+    margin-left: 2.5rem;
+    margin-top: 1.5rem;
+}
+
+.formulaire__champ--message {
+    height: 12rem;
+}
+
+.formulaire__envoyer {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--formulaire);
+    color: white;
+    border-width: 0.3rem;
+    border-radius: 50%;
+    height: 8rem; 
+	width: 8rem;
+    border-style: solid ;
+    border-color: red;
+    background-color: red;
+    margin-right:5rem;
+    margin-left: 8rem;
+    margin-top: 2rem;
+}

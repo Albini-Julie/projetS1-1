@@ -1,0 +1,35 @@
+.reseau__titre {
+    text-align: center;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--titre_header_et_partie);
+    color: white;
+    border-width: 0.3rem;
+    border-style: solid ;
+    border-color: var(--jaune-éléments);
+    margin-top: 3rem;
+    background-color: var(--jaune-éléments);
+}
+
+.reseau__texte {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.reseau__img {
+    width: 25%;
+    margin-top: 1rem;
+}
+
+.reseau__img--1 {
+    margin-left: 1rem;
+    margin-right: 9rem;
+}
+
+.reseau__img--3 {
+    width: 30%;
+    margin-left: 8rem;
+    margin-bottom: 1rem;;
+}

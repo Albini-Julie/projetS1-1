@@ -62,10 +62,13 @@
                 <img class="hero__vignette" src="public/img/Icone_5.jpg" alt="vignette camera">
                 <img class="hero__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <p class="hero__texte">Ici, vous retrouverez tous les films dans lesquels Tony Stark apparait.</p>
-                <figure class="hero__illustration">
-                    <img class="hero__img" src="public/img/dessin_stark_1.jpg" alt="photo Iron Man">
-                    <figcaption class="hero__legende">©Marvel</figcaption>
-                </figure>
+                <div x-data="{openphoto: false}">
+                    <figure class="hero__illustration">
+                        <img x-on:click="openphoto = !openphoto;" class="hero__img" src="public/img/dessin_stark_1.jpg" alt="photo Iron Man">
+                        <figcaption class="hero__legende">©Marvel</figcaption>
+                    </figure>
+                    <img x-on:click="openphoto = !openphoto;" x-show="openphoto" class="intro__img intro__img--2" src="public/img/Avengers.jpg" alt="affiche du film Avengers" x-show="img2">
+                </div>
             </article>
 
             <div class="encadré">

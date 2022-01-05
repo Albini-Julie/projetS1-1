@@ -1,11 +1,4 @@
-.article__img {
-    width: 20rem;
-    height: 30rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-	z-index: 1;
-	position: relative;
-}
+
 
 .article__texte {
     position: relative;
@@ -35,3 +28,22 @@
 	display: none;
 }
 
+.article__carrousel {
+	width: 280px;
+	height:450px;
+	position: absolute;
+	top: 0; left: 0;
+}
+
+.imgs__carrousel {
+	height:450px;
+	overflow: hidden;
+	position: relative;
+}
+
+.articles__carrousel {
+	width: 280px;
+	height:450px;
+	overflow: hidden;
+	margin: auto;
+}

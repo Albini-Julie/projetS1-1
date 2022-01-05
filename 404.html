@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr" x-data="{ menuIsOpen : false}" :class="menuIsOpen && 'noscroll'">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Site Fly New">
+
+        <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+        <script src="https://animejs.com/lib/anime.min.js"></script>
+        <script src="src/js/javascript.js"></script>
+        <link rel="stylesheet" href="src/css/style.css">
+        
+        <title>Fly New</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <div id="rectangle"></div>
+            <button class="header__menu" @click="menuIsOpen = !menuIsOpen" :class="menuIsOpen"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
+            <h1 class="header__titre">Fly <h1 class="header__titre header__titre--N">N</h1> <h1 class="header__titre header__titre--e">e</h1> <h1 class="header__titre header__titre--w">w</h1></h1>
+            <img class="header__img" src="public/img/logo.jpg" alt="logo du site">
+
+            <div class="menu" :class="menuIsOpen && 'menu--open'">
+                <img class="menu__barresDeco" src="public/icons/barres.svg" alt="barres décoratives">
+                <img class="menu__croix" @click="menuIsOpen = false" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
+                <nav>
+                    <ul class="menu__list list-unstyled">
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
+                            <li class="menu__item"><a class="menu__link" href="super_heros.html">Super-héros</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                            <li class="menu__item"><a class="menu__link" href="probleme_ecologique.html">Problème écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
+                            <li class="menu__item"><a class="menu__link" href="solution_ecologique.html">Solution écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
+                            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                            <li class="menu__item"><a class="menu__link" href="autres_projets.html">Autres projets</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
+                            <li class="menu__item"><a class="menu__link" href="livres.html">Livres</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
+                            <li class="menu__item"><a class="menu__link" href="galerie.html">Galerie</a></li>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <article class="hero">
+                <h2 class="hero__titre">404 - Page Non trouvée</h2>
+            </article>
+            <form action="https://duckduckgo.com/" method="GET" 
+                x-data="{ q:'', }" 
+                x-on:submit="q = q + ' site:mmimontbeliard.com'">
+                <label class="formulaire__legende" for="q">Entrer où vous voulez aller :</label>
+                <input class="formulaire__champ formulaire__champ--message" type="text" id="q" name="q" x-model="q">
+                <button class="formulaire__envoyer"  type="submit">Rechercher</button>
+            </form>
+        </main>
+
+        <br>
+        <br>
+        <br>
+        <footer class="footer">
+            <p class="footer__legal">Projet réalisé dans le cadre d’un exercice pédagogique au département MMi de Montbéliard</p>
+            <p class="footer__nom">Cécile Gaultier A2</p>
+            <a class="footer__mail" href="mailto:gaulph@gmail.com">gaulph@gmail.com</a>
+        </footer>
+    </body>
+</html>

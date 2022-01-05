@@ -36,8 +36,8 @@
 }
 
 .contenu__barres {
-    z-index: 1;
-    margin-top: 18rem;
+    margin: 0;
+    background: url(../../../public/icons/barres.svg) no-repeat left center;
 }
 
 .contenu__barres--petiteI {
@@ -46,10 +46,10 @@
 }
 
 .contenu__img {
-    z-index: 2;
-    width: 100%;
-    margin-top: -15rem;
-    margin-left: -1rem;
+    max-width: 100%;
+    height: auto;
+    width: calc(100% - 80px);
+    margin: 0 40px;
 }
 
 .contenu__img--entiere {
@@ -78,6 +78,10 @@
     margin-right:5rem;
     margin-left: 14rem;
     margin-top: -37rem;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
 }
 
 .contenu__vignette--avion {

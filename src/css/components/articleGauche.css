@@ -1,0 +1,53 @@
+.articleGauche__vignette {
+    position: absolute;
+    font-family: var(--font-sans-sherif);
+    font-size: var(--vignette);
+    color: white;
+    border-width: 0.3rem;
+    border-radius: 50%;
+    height: 8rem; 
+	width: 8rem;
+    border-style: solid ;
+    border-color: red;
+    background-color: red;
+    margin-right:5rem;
+    margin-left: 14rem;
+    margin-top: 1.5rem;
+}
+
+.articleGauche__img {
+    width: 110%;
+    margin-left: -1rem;
+    margin-top: 2rem
+}
+
+.articleGauche img {
+    max-width: 100%;
+    height: auto;
+}
+
+.articleGauche figure, ul, body {
+    margin: 0;
+}
+
+.articleGauche figcaption {
+    background-color: var(--bleu-pastel);
+    position: relative;
+}
+*
+.articleGauche figcaption > div {
+  transform: translatey(-100px);
+}
+
+.articleGauche figcaption::before {
+    --height:200px;
+    position: absolute;
+    top: calc(-1 * var(--height));
+    content: '';
+    display: block;
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: var(--height) 0 0 100vw;
+border-color: transparent transparent transparent var(--bleu-pastel);
+}

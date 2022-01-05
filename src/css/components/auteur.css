@@ -1,0 +1,27 @@
+.auteur__icon {
+    margin-left: 2rem;
+}
+
+.auteur__titre {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-top: -2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.auteur__img {
+    width: 27%;
+    float: left;
+    margin-top: 0.5rem;
+    margin-right: 2rem
+}
+
+.auteur__texte {
+    font-family: var(--font-sans-sherif);
+    font-size: var(--texte);
+    color: white;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}

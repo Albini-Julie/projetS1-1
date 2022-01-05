@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{ menuIsOpen : false}" :class="menuIsOpen && 'noscroll'">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,55 +13,53 @@
     </head>
     <body>
         <header class="header">
-            <button class="header__menu"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
-            <h1 class="header__titre">Fly New</h1>
+            <div id="rectangle"></div>
+            <button class="header__menu" @click="menuIsOpen = !menuIsOpen" :class="menuIsOpen"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
+            <h1 class="header__titre">Fly <h1 class="header__titre header__titre--N">N</h1> <h1 class="header__titre header__titre--e">e</h1> <h1 class="header__titre header__titre--w">w</h1></h1>
             <img class="header__img" src="public/img/logo.jpg" alt="logo du site">
 
-            <div class="menu">
+            <div class="menu" :class="menuIsOpen && 'menu--open'">
                 <img class="menu__barresDeco" src="public/icons/barres.svg" alt="barres décoratives">
-                <img class="menu__croix" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
-                
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
-                    <h5 class="menu__texte">Super-héros</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
-                    <h5 class="menu__texte">Problème écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
-                    <h5 class="menu__texte">Solution écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
-                    <h5 class="menu__texte">Contact</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
-                    <h5 class="menu__texte">Autres projets</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
-                    <h5 class="menu__texte">Livres</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
-                    <h5 class="menu__texte">Galerie</h5>
-                </div>
+                <img class="menu__croix" @click="menuIsOpen = false" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
+                <nav>
+                    <ul class="menu__list list-unstyled">
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
+                            <li class="menu__item"><a class="menu__link" href="article1.html">Super-héros</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                            <li class="menu__item"><a class="menu__link" href="article2.html">Problème écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
+                            <li class="menu__item"><a class="menu__link" href="article3.html">Solution écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
+                            <li class="menu__item"><a class="menu__link" href="galerie.html">Contact</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                            <li class="menu__item"><a class="menu__link" href="glossaire.html">Autres projets</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
+                            <li class="menu__item"><a class="menu__link" href="A_propos.html">Livres</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
+                            <li class="menu__item"><a class="menu__link" href="A_propos.html">Galerie</a></li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
         </header>
 
         <main>
             <article class="hero">
                 <h2 class="hero__titre">Solution écologique</h2>
-                <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes mortes">
+                <img class="hero__vignette" src="public/img/Icone_1.jpg" alt="vignette plantes mortes">
                 <img class="hero__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <p class="hero__texte">Si vous êtes arrivé sur cette page, c’est que vous voulez améliorer vos connaissances sur la pollution de l’air.</p>
                 <img class="hero__img" src="public/img/dessin_stark.jpg" alt="dessin d'illustration">
@@ -105,7 +103,7 @@
                     plus que triplé au cours de ces dernières
                     années !</p>
                 <figure class="contenu__illustration">
-                    <img class="contenu__img" src="public/img/video_carinata.jpg" alt="image vidéo biocarburants">
+                    <img class="contenu__img contenu__img--entiere" src="public/img/video_carinata.jpg" alt="image vidéo biocarburants">
                     <figcaption class="contenu__legende">Extrait de la vidéo de résentation de Biocarburant Carinata (2018) - ©Agrisoma</figcaption>
                 </figure>
             </article>
@@ -119,37 +117,37 @@
                 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Remplace le kérosène nécessaire, ce qui permet de parcourir 160 millions de km</p>
+                    <p class="contenu__texte contenu__texte--fleche">Remplace le kérosène nécessaire, ce qui permet de parcourir 160 millions de km</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Produit plus de 22 millions de kg de protéines pour nourrir des animaux</p>
+                    <p class="contenu__texte contenu__texte--fleche">Produit plus de 22 millions de kg de protéines pour nourrir des animaux</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Améliore la qualité des sols et absorber le CO2</p>
+                    <p class="contenu__texte contenu__texte--fleche">Améliore la qualité des sols et absorber le CO2</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Évite l’encrassement des avions, contrairement au kérosène </p>
+                    <p class="contenu__texte contenu__texte--fleche">Évite l’encrassement des avions, contrairement au kérosène </p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Augmente la capacité de propulsion des avions</p>
+                    <p class="contenu__texte contenu__texte--fleche">Augmente la capacité de propulsion des avions</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Produit plus d’énergie que le kérosène pour un volume identique</p>
+                    <p class="contenu__texte contenu__texte--fleche">Produit plus d’énergie que le kérosène pour un volume identique</p>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte">Produit du biodiésel (traditionnel et renouvelable). La France est l’un des principaux producteurs avec l’Allemagne.</p>
+                    <p class="contenu__texte contenu__texte--fleche">Produit du biodiésel (traditionnel et renouvelable). La France est l’un des principaux producteurs avec l’Allemagne.</p>
                 </div>
 
                 <p class="contenu__texte">Le Boeing 787-9 de Qantas a volé
@@ -170,7 +168,7 @@
                 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_1.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Voyager léger</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Voyager léger</p>
                     <p class="contenu__texte">Cela peut sembler anecdotique mais un
                         avion plus léger aura besoin de moins de
                         carburant pour la même distance. Dites
@@ -180,7 +178,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_2.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Prendre des vols</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Prendre des vols</p>
                     <p class="contenu__texte">Prendre des vols directs. Lorsque l’avion
                     s’arrête pour prendre du carburant, il est
                     obligé de se poser au sol. Or nous avons vu
@@ -190,7 +188,7 @@
                     sans escale sont beaucoup plus chers. »
                     C’est une idée reçue ! Voici les prix pour un
                     vol depuis New-York jusqu’à Vienne :</p>
-                    <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
+                    <img class="contenu__barres contenu__barres--petiteI" src="public/icons/barres.svg" alt="barres décoratives">
                     <figure class="contenu__illustration">
                         <img class="contenu__img" src="public/img/Prix_avions.jpg" alt="schéma avions">
                         <figcaption class="contenu__legende">©Google Flight</figcaption>
@@ -199,7 +197,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_3.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Voyager en classe économique</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Voyager en classe économique</p>
                     <p class="contenu__texte">Une étude de World Bank montre que vous
                         triplez votre émission de CO2 lorsque vous
                         voyagez en business ou en première classe.
@@ -209,7 +207,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_4.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Choisir des compagnies réputées « écologiques »</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Choisir des compagnies réputées « écologiques »</p>
                     <p class="contenu__texte">Choisir des compagnies réputées
                         « écologiques ». Certaines ont choisi de
                         réduire leur émission de CO2 par divers
@@ -218,16 +216,16 @@
                         trajets plus efficaces … ). Évitez les
                         compagnies aériennes les plus pollueuses
                         en 2018 :</p>
-                    <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
+                    <img class="contenu__barres contenu__barres--petiteI" src="public/icons/barres.svg" alt="barres décoratives">
                     <figure class="contenu__illustration">
-                        <img class="contenu__img" src="public/img/Tableau_2.jpg" alt="statistiques avions">
+                        <img class="contenu__img contenu__barres--petiteI" src="public/img/Tableau_2.jpg" alt="statistiques avions">
                         <figcaption class="contenu__legende">©Commission Européenne</figcaption>
                     </figure>
                 </div>
 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_5.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Baisser les stores de votre hublot</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Baisser les stores de votre hublot</p>
                     <p class="contenu__texte">Baisser les stores de votre hublot. Cela
                         permet de réduire la déperdition thermique
                         entre l’intérieur de l’avion (20°C) et
@@ -237,7 +235,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/Icon_6.svg" alt="icon décoratif">
-                    <p class="contenu__titre contenu__titre--soustitre">Amener ses propres couverts et serviettes</p>
+                    <p class="contenu__titre contenu__titre--soustitreSB">Amener ses propres couverts et serviettes</p>
                     <p class="contenu__texte">Tout le monde sait que le plastique est
                         extrêmement nocif pour l’environnement.
                         Donc la compagnie Hifly a décidé de
@@ -249,7 +247,7 @@
                         kilogrammes de plastique. Mais c’est la
                         seule compagnie qui opte vraiment pour
                         des vols « sans-plastique ».</p>
-                    <img class="contenu__barres" src="public/icons/barres.svg" alt="barres décoratives">
+                    <img class="contenu__barres contenu__barres--petiteI" src="public/icons/barres.svg" alt="barres décoratives">
                     <figure class="contenu__illustration">
                         <img class="contenu__img" src="public/img/plateau_plane.jpg" alt="image plateau">
                         <figcaption class="contenu__legende">©The Telegraph</figcaption>
@@ -269,7 +267,7 @@
         </main>
         <footer class="footer">
             <p class="footer__legal">Projet réalisé dans le cadre d’un exercice pédagogique au département MMi de Montbéliard</p>
-            <p class="footer_nom">Cécile Gaultier A2</p>
+            <p class="footer__nom">Cécile Gaultier A2</p>
             <a class="footer__mail" href="mailto:gaulph@gmail.com">gaulph@gmail.com</a>
         </footer>
     </body>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{ menuIsOpen : false}" :class="menuIsOpen && 'noscroll'">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,55 +13,53 @@
     </head>
     <body>
         <header class="header">
-            <button class="header__menu"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
-            <h1 class="header__titre">Fly New</h1>
+            <div id="rectangle"></div>
+            <button class="header__menu" @click="menuIsOpen = !menuIsOpen" :class="menuIsOpen"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
+            <h1 class="header__titre">Fly <h1 class="header__titre header__titre--N">N</h1> <h1 class="header__titre header__titre--e">e</h1> <h1 class="header__titre header__titre--w">w</h1></h1>
             <img class="header__img" src="public/img/logo.jpg" alt="logo du site">
 
-            <div class="menu">
+            <div class="menu" :class="menuIsOpen && 'menu--open'">
                 <img class="menu__barresDeco" src="public/icons/barres.svg" alt="barres décoratives">
-                <img class="menu__croix" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
-                
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
-                    <h5 class="menu__texte">Super-héros</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
-                    <h5 class="menu__texte">Problème écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
-                    <h5 class="menu__texte">Solution écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
-                    <h5 class="menu__texte">Contact</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
-                    <h5 class="menu__texte">Autres projets</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
-                    <h5 class="menu__texte">Livres</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
-                    <h5 class="menu__texte">Galerie</h5>
-                </div>
+                <img class="menu__croix" @click="menuIsOpen = false" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
+                <nav>
+                    <ul class="menu__list list-unstyled">
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
+                            <li class="menu__item"><a class="menu__link" href="super_heros.html">Super-héros</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                            <li class="menu__item"><a class="menu__link" href="probleme_ecologique.html">Problème écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
+                            <li class="menu__item"><a class="menu__link" href="solution_ecologique.html">Solution écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
+                            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                            <li class="menu__item"><a class="menu__link" href="autres_projets.html">Autres projets</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
+                            <li class="menu__item"><a class="menu__link" href="livres.html">Livres</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
+                            <li class="menu__item"><a class="menu__link" href="galerie.html">Galerie</a></li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
         </header>
 
         <main>
             <article class="hero">
                 <h2 class="hero__titre">Problème écologique</h2>
-                <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                <img class="hero__vignette" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
                 <img class="hero__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <p class="hero__texte">Si vous êtes arrivé sur cette page, c’est que vous êtes concerné par la pollution de l’air !</p>
                 <figure class="hero__illustration">
@@ -92,7 +90,7 @@
 
             <div class="contenu">
                 <p class="contenu__texte">D’après le ministère de la Transition écologique, dans son guide Info GES 2018, on obtiendrait les résultats suivants:</p>
-                <img class="contenu__img contenu__img--entier" src="Tableau_1.jpg" alt="tableau statistique">
+                <img class="contenu__img contenu__img--entiere" src="public/img/Tableau_1.jpg" alt="tableau statistique">
                 <p class="contenu__texte">On voit donc qu’un avion émet beaucoup
                     plus de CO2 que la voiture ou le train. Vous
                     pourriez me dire « Mais le CO2 n’est pas
@@ -191,7 +189,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte contenu__texte--bold">Cycle LTO:</p>
+                    <strong class="contenu__texte contenu__texte--fleche">Cycle LTO:</strong>
                     <p class="contenu__texte">(Landing and Take Off = atterrissage et
                         décollage) Cette phase concerne le
                         décollage, la montée, l’approche,
@@ -206,7 +204,7 @@
 
                 <div>
                     <img class="contenu__icon" src="public/icons/flèche_unique.svg" alt="fleche décorative">
-                    <p class="contenu__texte contenu__texte--bold">Phase de croisière :</p>
+                    <strong class="contenu__texte contenu__texte--fleche">Phase de croisière :</strong>
                     <p class="contenu__texte">Cette phase se situe entre le décollage et
                         l’atterrissage. L’avion vole à une altitude
                         minimum de 915m. Cela correspond à la
@@ -214,7 +212,7 @@
                         l’échelon mondial ( ou au moins régional ).</p>
                 </div>
                     
-                <img class="contenu__img" src="public/img/Diagramme.jpg" alt="image statistiques">
+                <img class="contenu__img contenu__img--entiere" src="public/img/Diagramme.jpg" alt="image statistiques">
                 <p class="contenu__texte">La quantité de CO2 émis dépend du type
                     du moteur, du poids de l’avion, et du
                     nombre de ses escales. Certaines
@@ -246,7 +244,7 @@
         
         <footer class="footer">
             <p class="footer__legal">Projet réalisé dans le cadre d’un exercice pédagogique au département MMi de Montbéliard</p>
-            <p class="footer_nom">Cécile Gaultier A2</p>
+            <p class="footer__nom">Cécile Gaultier A2</p>
             <a class="footer__mail" href="mailto:gaulph@gmail.com">gaulph@gmail.com</a>
         </footer>
     </body>

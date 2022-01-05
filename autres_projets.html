@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" x-data="{ menuIsOpen : false}" :class="menuIsOpen && 'noscroll'">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,63 +10,65 @@
         <title>Fly New</title>
 
         <link rel="stylesheet" href="src/css/style.css">
-        <script defer="" src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+        <script src="https://unpkg.com/alpinejs@3.4.2/dist/cdn.min.js"></script>
+        <script src="https://animejs.com/lib/anime.min.js"></script>
+        <script src="src/js/javascript.js"></script>
     </head>
     <body>
         <header class="header">
-            <button class="header__menu"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
-            <h1 class="header__titre">Fly New</h1>
+            <div id="rectangle"></div>
+            <button class="header__menu" @click="menuIsOpen = !menuIsOpen" :class="menuIsOpen"> <img src="public/icons/icon_menu.svg" alt="icon du menu"></button>
+            <h1 class="header__titre">Fly <h1 class="header__titre header__titre--N">N</h1> <h1 class="header__titre header__titre--e">e</h1> <h1 class="header__titre header__titre--w">w</h1></h1>
             <img class="header__img" src="public/img/logo.jpg" alt="logo du site">
 
-            <div class="menu">
+            <div class="menu" :class="menuIsOpen && 'menu--open'">
                 <img class="menu__barresDeco" src="public/icons/barres.svg" alt="barres décoratives">
-                <img class="menu__croix" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
-                
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
-                    <h5 class="menu__texte">Super-héros</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
-                    <h5 class="menu__texte">Problème écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
-                    <h5 class="menu__texte">Solution écologique</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
-                    <h5 class="menu__texte">Contact</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
-                    <h5 class="menu__texte">Autres projets</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
-                    <h5 class="menu__texte">Livres</h5>
-                </div>
-
-                <div class="menu__items">
-                    <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
-                    <h5 class="menu__texte">Galerie</h5>
-                </div>
+                <img class="menu__croix" @click="menuIsOpen = false" src="public/icons/croix_menu.svg" alt="croix de fermeture du menu">
+                <nav>
+                    <ul class="menu__list list-unstyled">
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_3.jpg" alt="vignette Super-héros">
+                            <li class="menu__item"><a class="menu__link" href="super_heros.html">Super-héros</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_7.jpg" alt="vignette plantes mortes">
+                            <li class="menu__item"><a class="menu__link" href="probleme_ecologique.html">Problème écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_1.jpg" alt="vignette plantes vivantes">
+                            <li class="menu__item"><a class="menu__link" href="solution_ecologique.html">Solution écologique</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_6.jpg" alt="vignette courriel">
+                            <li class="menu__item"><a class="menu__link" href="contact.html">Contact</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                            <li class="menu__item"><a class="menu__link" href="autres_projets.html">Autres projets</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_4.jpg" alt="vignette livres">
+                            <li class="menu__item"><a class="menu__link" href="livres.html">Livres</a></li>
+                        </div>
+                        <div>
+                            <img class="menu__img" src="public/img/Icone_5.jpg" alt="vignette galerie">
+                            <li class="menu__item"><a class="menu__link" href="galerie.html">Galerie</a></li>
+                        </div>
+                    </ul>
+                </nav>
             </div>
         </header>
         
         <main>
             <article class="hero">
                 <h2 class="hero__titre">Autres projets</h2>
-                <img class="menu__img" src="public/img/Icone_2.jpg" alt="vignette personnes">
+                <img class="hero__vignette" src="public/img/Icone_2.jpg" alt="vignette personnes">
                 <img class="hero__barres" src="public/icons/barres.svg" alt="barres décoratives">
                 <p class="hero__texte">Si vous êtes arrivé sur cette page, c’est que vous vous sentez concerné par l’environnement. Apprenez comment ces super-héros polluent la planète !</p>
                 <figure class="hero__illustration">
-                    <img class="hero__img" src="public/img/dessin_stark_3.jpg" alt="dessin d'illustration">
+                    <img class="hero__img" src="public/img/dessin_stark_3.jpg" alt="dessin d'illustration"
+                        x-on:mouseover="monterLegende('hero__legende');"
+                        x-on:mouseleave="descendreLegende();">
                     <figcaption class="hero__legende">©Marvel Legacy</figcaption>
                 </figure>
             </article>
@@ -82,91 +84,133 @@
                     écologique.</p>
             </div>
 
-            <div class="contenu">
+            <div class="article">
+				<div class="article__carrousel">
+					<img id="img1" class="article__carrousel article__img" src="public/img/Iron_Man_1.jpg"/>
+					<img id="img2" class="article__carrousel article__img" src="public/img/aquaman.jpg"/>
+					<img id="img3" class="article__carrousel article__img" src="public/img/epouvantail.jpg"/>
+					<img id="img4" class="article__carrousel article__img" src="public/img/Fat_Buu04.jpg"/>
+                    <img id="img5" class="article__carrousel article__img" src="public/img/Iron_Man_affiche.jpg"/>
+                    <img id="img6" class="article__carrousel article__img" src="public/img/ghost_raider.jpg"/>
+                    <img id="img7" class="article__carrousel article__img" src="public/img/Iron_Man_affiche_2.jpg"/>
+                    <img id="img8" class="article__carrousel article__img" src="public/img/sanji.jpg"/>
+                    <img id="img9" class="article__carrousel article__img" src="public/img/Guts.jpg"/>
+                    <img id="img10" class="article__carrousel article__img" src="public/img/super_mario.jpg"/>
+                    <img id="img11" class="article__carrousel article__img" src="public/img/Asterix.jpg"/>
+				</div>
+			</div>
+
+            <script>
+			
+                carrousel();
+                
+            </script>
+            
+            <!--<div class="contenu">
 				<div class="contenu__caroussel">
-					<div class="articleGauche">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Iron_Man_1.jpg" alt="image Iron Man">   
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projets Iron-Man</h4>
-                        <p class="articleGauche__texte"><u>Iron-Man et la pollution de l’espace </u>- Joseph McDONOUGH</p>
-                        <p class="articleGauche__texte"><u>The Bad Metal Man</u>- Zéphir CHARLY</p>
+					<div class="article">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Iron_Man_1.jpg" alt="image Iron Man">   
+                        <h4 class="article__titre texte13">Projets Iron-Man</h4>
+                        <p class="article__texte  texte13"><u>Iron-Man et la pollution de l’espace </u>- Joseph McDONOUGH</p>
+                        <p class="article__texte  texte13"><u>The Bad Metal Man</u>- Zéphir CHARLY</p>
                     </div>
 
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/aquaman.jpg" alt="image Aquaman">
-                            <figcaption class="articleGauche__legende">©iTunes - Apple</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/aquaman.jpg" alt="image Aquaman">
+                            <figcaption class="article__legende">©iTunes - Apple</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projets Aquaman</h4>
-                        <p class="articleGauche__texte"><u>Aquatic Pollution</u>- Théo VUILLIEN</p>
-                        <p class="articleGauche__texte"><u>Atlantis</u>- Léa MESSERLIN</p>
+                        <h4 class="article__titre">Projets Aquaman</h4>
+                        <p class="article__texte"><u>Aquatic Pollution</u>- Théo VUILLIEN</p>
+                        <p class="article__texte"><u>Atlantis</u>- Léa MESSERLIN</p>
                     </div>
 
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/epouvantail.jpg" alt="image epouvantail">
-                            <figcaption class="articleGauche__legende">©Amazon</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/epouvantail.jpg" alt="image epouvantail">
+                            <figcaption class="article__legende">©Amazon</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Épouvantail</h4>
-                        <p class="articleGauche__texte"><u>Phytophobia</u>- Thibaud BARRAND</p>
+                        <h4 class="article__titre">Projet Épouvantail</h4>
+                        <p class="article__texte"><u>Phytophobia</u>- Thibaud BARRAND</p>
                     </div>
 
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Fat_Buu04.jpg" alt="image Boo">
-                            <figcaption class="articleGauche__legende">©Dragon Ball Wiki - Fandom</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel"
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Fat_Buu04.jpg" alt="image Boo">
+                            <figcaption class="article__legende">©Dragon Ball Wiki - Fandom</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Boo</h4>
-                        <p class="articleGauche__texte"><u>Fake Food</u>- Ambre GEISS</p>
+                        <h4 class="article__titre">Projet Boo</h4>
+                        <p class="article__texte"><u>Fake Food</u>- Ambre GEISS</p>
                     </div>
 
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Iron_Man_affiche.jpg" alt="Affiche film Iron Man">
-                            <figcaption class="articleGauche__legende">©Cdiscount.com</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Iron_Man_affiche.jpg" alt="Affiche film Iron Man">
+                            <figcaption class="article__legende">©Cdiscount.com</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Hulk</h4>
-                        <p class="articleGauche__texte"><u>Hulk Industries</u>- Aloïs BOLOU</p>
+                        <h4 class="article__titre">Projet Hulk</h4>
+                        <p class="article__texte"><u>Hulk Industries</u>- Aloïs BOLOU</p>
                     </div>
 					
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/ghost_raider.jpg" alt="Affiche film Ghost Raider">
-                            <figcaption class="articleGauche__legende">©Cdiscount.com</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/ghost_raider.jpg" alt="Affiche film Ghost Raider">
+                            <figcaption class="article__legende">©Cdiscount.com</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Ghost Rider</h4>
-                        <p class="articleGauche__texte"><u>The Skull who burns the world</u>- Thibault Moebel</p>
+                        <h4 class="article__titre">Projet Ghost Rider</h4>
+                        <p class="article__texte"><u>The Skull who burns the world</u>- Thibault Moebel</p>
                     </div>
 
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Iron_Man_affiche_2.jpg" alt="Affiche film Joker">
-                            <figcaption class="articleGauche__legende">©Cdiscount.com</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Iron_Man_affiche_2.jpg" alt="Affiche film Joker">
+                            <figcaption class="article__legende">©Cdiscount.com</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Joker</h4>
-                        <p class="articleGauche__texte"><u>Le Joker et son gaz polluant</u>- Baptiste BERTHIER</p>
+                        <h4 class="article__titre">Projet Joker</h4>
+                        <p class="article__texte"><u>Le Joker et son gaz polluant</u>- Baptiste BERTHIER</p>
                     </div>
                     
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/sanji.jpg" alt="Affiche film Sanjii">
-                            <figcaption class="articleGauche__legende">©Anime-Planet</figcaption>
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/sanji.jpg" alt="Affiche film Sanjii">
+                            <figcaption class="article__legende">©Anime-Planet</figcaption>
                         </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Sanji</h4>
-                        <p class="articleGauche__texte"><u>Le plastique, une idée fumante</u>- Benjamin BEY</p>
+                        <h4 class="article__titre">Projet Sanji</h4>
+                        <p class="article__texte"><u>Le plastique, une idée fumante</u>- Benjamin BEY</p>
+                    </div>
+
+                    <div class="article">
+                        <figure class="article__illustration">
+                            <img class="article__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Guts.jpg" alt="Affiche film Guts">
+                            <figcaption class="article__legende">©Berserk Fan Art source - Instagram</figcaption>
+                        </figure>
+                        <h4 class="article__titre">Projet Guts</h4>
+                        <p class="article__texte"><u>Rage against the nature</u>- Lucas BAILLY</p>
                     </div>
 
                     <div class="articleGauche">
                         <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Guts.jpg" alt="Affiche film Guts">
-                            <figcaption class="articleGauche__legende">©Berserk Fan Art source - Instagram</figcaption>
-                        </figure>
-                        <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Guts</h4>
-                        <p class="articleGauche__texte"><u>Rage against the nature</u>- Lucas BAILLY</p>
-                    </div>
-
-                    <div class="articleGauche">
-                        <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/super_mario.jpg" alt="Affiche Super Mario">
+                            <img class="articleGauche__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/super_mario.jpg" alt="Affiche Super Mario">
                             <figcaption class="articleGauche__legende">©IGN.com</figcaption>
                         </figure>
                         <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Super Mario</h4>
@@ -175,18 +219,21 @@
 
                     <div class="articleGauche">
                         <figure class="articleGauche__illustration">
-                            <img class="articleGauche__img contenu__icaroussel" src="public/img/Asterix.jpg" alt="Affiche Astérix">
+                            <img class="articleGauche__img contenu__icaroussel" 
+                            x-on:mouseover="monterLegende();"
+                            x-on:mouseleave="descendreLegende();" src="public/img/Asterix.jpg" alt="Affiche Astérix">
                             <figcaption class="articleGauche__legende">©Otakia</figcaption>
                         </figure>
                         <h4 class="articleGauche__titre articleDroite__titre--sanssoulignage">Projet Obélix</h4>
                         <p class="articleGauche__texte"><u>Le Gaulois</u>- Matthieu MUCCIO</p>
                     </div>
 				</div>
+            -->
 			</div>
         </main>
         <footer class="footer">
             <p class="footer__legal">Projet réalisé dans le cadre d’un exercice pédagogique au département MMi de Montbéliard</p>
-            <p class="footer_nom">Cécile Gaultier A2</p>
+            <p class="footer__nom">Cécile Gaultier A2</p>
             <a class="footer__mail" href="mailto:gaulph@gmail.com">gaulph@gmail.com</a>
         </footer>
     </body>
